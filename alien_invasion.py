@@ -12,11 +12,11 @@ class AlienInvasion:
         while True:
             #监视键盘和鼠标事件
             for event in pygame.event.get():
-                if event.pype == pygame.QUIT:
+                if event.type == pygame.QUIT:
                     sys.exit()
                 #让最近绘制的屏幕可见。
                 pygame.display.flip()
-if __name__ == '__main__'
+if __name__ == '__main__':
     #创建游戏实例并运行游戏
     ai = AlienInvasion()
     ai.run_game()
