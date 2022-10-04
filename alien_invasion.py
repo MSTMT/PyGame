@@ -4,6 +4,7 @@ from settings import Settings
 from ship import Ship
 from bullet import Bullet
 
+
 class AlienInvasion:
     """管理游戏资源和行为的类"""
     def __init__(self):
@@ -28,10 +29,10 @@ class AlienInvasion:
             self._update_bullets()
 
     def _check_events(self):
-        #监视键盘和鼠标事件
-         for event in pygame.event.get():
+        # 监视键盘和鼠标事件
+        for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                 sys.exit()
+                sys.exit()
             elif event.type == pygame.KEYDOWN:
                 self._check_keydown_events(event)
             elif event.type == pygame.KEYUP:
@@ -48,7 +49,6 @@ class AlienInvasion:
             sys.exit()
         elif event.key == pygame.K_SPACE:
             self._fire_bullet()
-
 
     def _check_keyup_events(self, event):
         if event.key == pygame.K_RIGHT:
@@ -83,10 +83,7 @@ class AlienInvasion:
                 self.bullets.remove(bullet)
 
 
-
 if __name__ == '__main__':
-    #创建游戏实例并运行游戏
+    # 创建游戏实例并运行游戏
     ai = AlienInvasion()
     ai.run_game()
-
-
