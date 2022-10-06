@@ -1,3 +1,4 @@
+# -*- coding:utf8 -*-
 import sys
 import pygame
 from settings import Settings
@@ -32,6 +33,7 @@ class AlienInvasion:
         self._create_fleet()
         # 创建play按钮
         self.play_button = Button(self, "play")
+
 
     def run_game(self):
         """开始游戏的主循环体"""

@@ -1,3 +1,4 @@
+# -*- coding:utf8 -*-
 import pygame.font
 from pygame.sprite import Group
 
@@ -14,9 +15,9 @@ class Scoreboard:
         self.settings = ai_game.settings
         self.stats = ai_game.stats
 
-        # 显示得分信息时使用的字体设置
+        # 显示得分信息时使用的字体设置：字体颜色、字体、大小
         self.text_color = (30, 30, 30)
-        self.font = pygame.font.SysFont(None, 48)
+        self.font = pygame.font.SysFont('simHei', 30)
         # 准备包含最高得分和当前得分的图像
         self.prep_score()
         self.prep_high_score()
@@ -27,7 +28,7 @@ class Scoreboard:
         """将得分转换为渲染的图像"""
         rounded_score = round(self.stats.score, -1)
         score_str = "{:,}".format(rounded_score)
-
+        score_str = f"{'当前得分：'}{score_str}"
         self.score_image = self.font.render(score_str, True, self.text_color, self.settings.bg_color)
 
         # 在屏幕右上角显示得分
@@ -46,6 +47,7 @@ class Scoreboard:
         """将最高得分转换为渲染的图像"""
         high_score = round(self.stats.high_score, -1)
         high_score_str = "{:,}".format(high_score)
+        high_score_str = f"{'最高得分：'} {high_score_str}"
         self.high_score_image = self.font.render(high_score_str, True, self.text_color, self.settings.bg_color)
 
         # 将最高得分放在屏幕顶部中央
@@ -62,6 +64,7 @@ class Scoreboard:
     def prep_level(self):
         """将等级转换为渲染的图像"""
         level_str = str(self.stats.level)
+        level_str = f"{'等级：'} {level_str}"
         self.level_image = self.font.render(level_str, True, self.text_color, self.settings.bg_color)
 
         # 将等级放在得分下方
