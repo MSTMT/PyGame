@@ -1,7 +1,7 @@
 import pygame
 from pygame.sprite import Sprite
 
-
+##提交测试
 class Alien(Sprite):
     """表示单个外星人的类"""
     def __init__(self, ai_game):
